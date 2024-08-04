@@ -145,8 +145,10 @@ void F::LEGITBOT::AIM::AimAssist(CBaseUserCmdPB* pUserCmd, C_CSPlayerPawn* pLoca
 
 		// Get the distance/weight of the move
 		float flCurrentDistance = GetAngularDistance(pUserCmd, vecPos, pLocalPawn);
-		if (pTarget && flCurrentDistance > flDistance) // Override if this is the first move or if it is a better move
+		if (flCurrentDistance > C_GET(float , Vars.aim_range) || flCurrentDistance > flDistance)
+		{
 			continue;
+		}
 
 		// Better move found, override.
 		pTarget = pPlayer;

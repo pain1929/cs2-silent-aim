@@ -119,11 +119,11 @@ void MENU::RenderMainWindow()
 		pDrawList->AddText(ImVec2(vecMenuPos.x + vecMenuSize.x - style.WindowPadding.x - vecTitleSize.x, vecMenuPos.y + style.WindowPadding.y), ImGui::GetColorU32(ImGuiCol_Text), CS_XOR("asphyxia"));
 
 		static const CTab arrTabs[] = {
-			{ "ragebot", &T::RageBot },
+			//{ "ragebot", &T::RageBot },
 			{ "legitbot", &T::LegitBot },
-			{ "visuals", &T::Visuals },
-			{ "miscellaneous", &T::Miscellaneous },
-			{ "skins changer", &T::SkinsChanger }
+			{ "visuals", &T::Visuals }
+			//{ "miscellaneous", &T::Miscellaneous },
+			//{ "skins changer", &T::SkinsChanger }
 		};
 
 		T::Render(CS_XOR("##main_tabs"), arrTabs, CS_ARRAYSIZE(arrTabs), &nCurrentMainTab);
@@ -364,16 +364,16 @@ void T::LegitBot()
 		}
 
 		ImGui::Checkbox(CS_XOR("enable##aimbot"), &C_GET(bool, Vars.bLegitbot));
-		ImGui::SliderFloat(CS_XOR("smoothing"), &C_GET(float, Vars.flSmoothing), 1.f, 100.f);
+		ImGui::SliderFloat(CS_XOR("aim range"), &C_GET(float, Vars.aim_range), 1.f, 50.f);
 
-		ImGui::NewLine();
+		//ImGui::NewLine();
 		// Key
-		ImGui::Checkbox(CS_XOR("always on##aimbot"), &C_GET(bool, Vars.bLegitbotAlwaysOn));
-		ImGui::BeginDisabled(C_GET(bool, Vars.bLegitbotAlwaysOn));
+		//ImGui::Checkbox(CS_XOR("always on##aimbot"), &C_GET(bool, Vars.bLegitbotAlwaysOn));
+		//ImGui::BeginDisabled(C_GET(bool, Vars.bLegitbotAlwaysOn));
 		{
 			ImGui::HotKey(CS_XOR("toggle key"), &C_GET(unsigned int, Vars.nLegitbotActivationKey));
 		}
-		ImGui::EndDisabled();
+		//ImGui::EndDisabled();
 	}
 	ImGui::EndChild();
 }
