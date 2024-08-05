@@ -14,6 +14,9 @@
 #include "../../core/variables.h"
 #include "../../sdk/interfaces/ccsgoinput.h"
 #include "../../sdk/interfaces/cgametracemanager.h"
+#include "../../utilities/draw.h"
+#include "../../core/sdk.h"
+#include "../../sdk/interfaces/iswapchaindx11.h"
 void F::LEGITBOT::AIM::OnMove(CUserCmd* pCmd, CBaseUserCmdPB* pBaseCmd, CCSPlayerController* pLocalController, C_CSPlayerPawn* pLocalPawn)
 {
 	// Check if the legitbot is enabled
@@ -144,8 +147,28 @@ void F::LEGITBOT::AIM::AimAssist(CBaseUserCmdPB* pUserCmd, C_CSPlayerPawn* pLoca
 
 
 		// Get the distance/weight of the move
-		float flCurrentDistance = GetAngularDistance(pUserCmd, vecPos, pLocalPawn);
-		if (flCurrentDistance > C_GET(float , Vars.aim_range) || flCurrentDistance > flDistance)
+		//float flCurrentDistance = GetAngularDistance(pUserCmd, vecPos, pLocalPawn);
+		//if (flCurrentDistance > C_GET(float , Vars.aim_range) || flCurrentDistance > flDistance)
+		//{
+		//	continue;
+		//}
+		
+	
+		auto calculateDistance = [](double x1, double y1, double x2, double y2)
+		{
+			return std::sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+		};
+		ImVec2 vec{};
+		if (!D::WorldToScreen(vecPos, &vec))
+		{
+			continue;
+		}
+		DXGI_SWAP_CHAIN_DESC sd{};
+		I::SwapChain->pDXGISwapChain->GetDesc(&sd);
+
+		float flCurrentDistance = calculateDistance(sd.BufferDesc.Width / 2, sd.BufferDesc.Height / 2, vec.x, vec.y);
+
+		if (flCurrentDistance > C_GET(float, Vars.aim_range) || flCurrentDistance > flDistance)
 		{
 			continue;
 		}

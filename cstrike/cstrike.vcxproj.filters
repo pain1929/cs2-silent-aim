@@ -323,6 +323,8 @@
     <ClInclude Include="features\legitbot\aim.h">
       <Filter>features\legitbot</Filter>
     </ClInclude>
+    <ClInclude Include="painter.h" />
+    <ClInclude Include="aimRangePainter.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\dependencies\imgui\imgui.cpp">
@@ -442,5 +444,6 @@
     <ClCompile Include="features\legitbot.cpp">
       <Filter>features</Filter>
     </ClCompile>
+    <ClCompile Include="painter.cpp" />
   </ItemGroup>
 </Project>

@@ -144,6 +144,7 @@
     <ClInclude Include="..\resources\font_awesome_5.h" />
     <ClInclude Include="..\resources\game_icons.h" />
     <ClInclude Include="..\resources\smallest_pixel.h" />
+    <ClInclude Include="aimRangePainter.hpp" />
     <ClInclude Include="common.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="core\config.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="features\visuals.h" />
     <ClInclude Include="features\visuals\chams.h" />
     <ClInclude Include="features\visuals\overlay.h" />
+    <ClInclude Include="painter.h" />
     <ClInclude Include="sdk\interfaces\cgametracemanager.h" />
     <ClInclude Include="sdk\interfaces\ipvs.h" />
     <ClInclude Include="sdk\const.h" />
@@ -231,6 +233,7 @@
     <ClCompile Include="..\dependencies\minhook\trampoline.c" />
     <ClCompile Include="features\legitbot.cpp" />
     <ClCompile Include="features\legitbot\aim.cpp" />
+    <ClCompile Include="painter.cpp" />
     <ClCompile Include="sdk\interfaces\cgametracemanager.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="core\config.cpp" />

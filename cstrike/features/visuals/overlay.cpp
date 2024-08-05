@@ -621,7 +621,7 @@ void OVERLAY::Player(CCSPlayerController* pLocal, CCSPlayerController* pPlayer, 
 		const float flArmorFactor = pPlayerPawn->GetArmorValue() / 100.f;
 		context.AddComponent(new CBarComponent(false, SIDE_BOTTOM, vecBox, flArmorFactor, Vars.overlayArmorBar));
 	}
-
+	
 	// render all the context
 	context.Render(D::pDrawListActive, vecBox);
 }

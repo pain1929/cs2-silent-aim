@@ -21,6 +21,7 @@
 #include "sdk/interfaces/cgameentitysystem.h"
 #include "sdk/datatypes/usercmd.h"
 #include "sdk/entity.h"
+#include "aimRangePainter.hpp"
 
 bool F::Setup()
 {
