@@ -20,9 +20,8 @@
 
 ## Reminder
 - this project is for educational purposes only.
+-  ins 键呼出菜单 end 释放模块
 - it will now be more focus on the 'base' rather than the 'cheat' itself.
-  ins 键呼出菜单
-  end 释放模块
   [✓] ESP - basic esp feature like: name, hp, armor... (comes with interactive menu preview, not draggable)
   
   [✓] CHAMS - basic chams system
