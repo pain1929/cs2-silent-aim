@@ -37,7 +37,7 @@
 bool CORE::GetWorkingPath(wchar_t* wszDestination)
 {
 	//const wchar_t* wszModuleName = MEM::GetModuleBaseFileName(static_cast<HMODULE>(hDll), true);
-	CRT::StringCopy(wszDestination, L"D:\\work\\.asphyxia\\");
+	CRT::StringCopy(wszDestination, L"C:\\.asphyxia\\");
 	// create directory if it doesn't exist
 	if (!::CreateDirectoryW(wszDestination, nullptr))
 	{
